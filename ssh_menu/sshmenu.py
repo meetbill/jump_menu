@@ -44,8 +44,9 @@ def menuhostlist(screen, defaultitem = 0):
     if lbcw[0] in (None, 'ok'):
         sshhost = Config.get(configsections[lbcw[1]], 'hostname')
         sshuser = Config.get(configsections[lbcw[1]], 'username')
+        sshport = Config.get(configsections[lbcw[1]], 'hostport')
         screen.suspend()
-        oscmd = "ssh " + sshuser + "@" + sshhost
+        oscmd = "ssh -p %s %s@%s" %(sshport,sshuser, sshhost)
         os.system(oscmd)
         screen.resume()
         menuhostlist(screen, lbcw[1])
