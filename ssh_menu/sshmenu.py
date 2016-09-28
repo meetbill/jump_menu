@@ -68,7 +68,7 @@ def listhost():
         sshuser = Config.get(item, 'username')
         sshport = Config.get(item, 'hostport')
         print "#ssh -p %s %s@%s"%(sshport,sshuser,sshhost)
-        print "#sco -P %s srcfile %s@%s:/root/"%(sshport,sshuser,sshhost)
+        print "#scp -P %s srcfile %s@%s:/root/"%(sshport,sshuser,sshhost)
 
 
 _hostlistcfgfile = '%s/hostlist.cfg'%os.path.split(os.path.realpath(__file__))[0]
