@@ -36,3 +36,9 @@ $ git checkout master
 $ git rebase upstream/master
 $ git push -f origin master
 ```
+
+## 小额捐款
+
+如果你觉得jump_menu对你有帮助, 可以对作者进行小额捐款(支付宝)
+
+![Screenshot](images/5.jpg)

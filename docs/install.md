@@ -36,3 +36,10 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub "-p 20022 test@192.168.3.2"
 ```
 #ww -h
 ```
+
+## 运维
+
+安装目录
+```
+/opt/ssh_menu/
+```
