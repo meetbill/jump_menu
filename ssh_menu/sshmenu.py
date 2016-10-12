@@ -62,6 +62,10 @@ def listhost():
         sys.exit(1)
     configsections = sorted(Config.sections())
 
+    print "-"*70
+    print "| [install dir]: /opt/ssh_menu/"
+    print '| [ssh-key]:ssh-copy-id "-p xxxx root@ip"'
+    print "-"*70
     for item in configsections:
         print "[%s]"%item
         sshhost = Config.get(item, 'hostname')
@@ -74,7 +78,13 @@ def listhost():
 _hostlistcfgfile = '%s/hostlist.cfg'%os.path.split(os.path.realpath(__file__))[0]
 
 if len(sys.argv) == 2:
-    opts, args = getopt.getopt(sys.argv[1:], "h")
+    try:
+        opts, args = getopt.getopt(sys.argv[1:], "h")
+    except getopt.GetoptError as err:
+        print str(err)
+        print "usage:ww"
+        print "      ww -h"
+        sys.exit()
     for op, value in opts:
         if op == "-h":
             listhost()
