@@ -4,16 +4,19 @@
 # Author: Bill
 # Created Time : 2016-08-31 18:20:06
 
-# File Name: w.py
+# File Name: sshmenu.py
 # Description:
 
 """
+import os, sys
+root_path = os.path.split(os.path.realpath(__file__))[0]
+sys.path.insert(0, os.path.join(root_path, 'mylib'))
 from snack import *
 import time, sys, os
 import ConfigParser
 import sys, getopt
 
-version = '$Id: sshmenu.py 1.0.1 $'
+version = '$Id: sshmenu.py 1.0.2 $'
 
 def menuhostlist(screen, defaultitem = 0):
     global _hostlistcfgfile
