@@ -1,10 +1,10 @@
 # jump_menu
 
-python 跳转机菜单
+python 跳转机菜单，搭配[双因子认证](https://billwang139967.gitbooks.io/op_practice_book/content/doc/Linux/safety.html)可以实现简单的跳转机服务
 
 <!-- vim-markdown-toc GFM -->
 * [安装及使用](#安装及使用)
-* [其他相关项目](#其他相关项目)
+* [相关内容](#相关内容)
 * [版本发布](#版本发布)
 * [参加步骤](#参加步骤)
 * [小额捐款](#小额捐款)
@@ -17,14 +17,15 @@ python 跳转机菜单
 
 ![Screenshot](images/jump_menu.jpg)
 
-## 其他相关项目
+## 相关内容
 
-> * 批量运维工具 xbatch---------------------------------------------[xbatch](https://github.com/BillWang139967/xbatch)
+> * [双因子认证](https://billwang139967.gitbooks.io/op_practice_book/content/doc/Linux/safety.html)
+> * 批量运维工具 [xbatch](https://github.com/BillWang139967/xbatch)
 
 ## 版本发布
 
 * v1.0.2，2017-03-28，更新：添加 snack.py 文件，兼容 ubuntu 系统
-* v1.0.1，2018-08-31，新增：发布初始版本。
+* v1.0.1，2016-08-31，新增：发布初始版本。
 
 
 ## 参加步骤
