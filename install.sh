@@ -6,5 +6,8 @@
 #########################################################################
 #!/bin/bash
 cp -rf ./ssh_menu/ /opt/
-ln -s /opt/ssh_menu/sshmenu.py /bin/ww
-chmod 777 /opt/ssh_menu/sshmenu.py
+if [[ ! -f "/bin/ww" ]]
+then
+    ln -s /opt/ssh_menu/sshmenu.py /bin/ww
+fi
+chmod +x -R /opt/ssh_menu/

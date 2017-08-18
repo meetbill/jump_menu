@@ -1,6 +1,6 @@
 # jump_menu
 
-python 跳转机菜单，搭配[双因子认证](https://billwang139967.gitbooks.io/op_practice_book/content/doc/Linux/safety.html)可以实现简单的跳转机服务
+python 跳转机菜单，搭配 [双因子认证](https://billwang139967.gitbooks.io/op_practice_book/content/doc/Linux/safety.html) 可以实现简单的跳转机服务
 
 <!-- vim-markdown-toc GFM -->
 * [安装及使用](#安装及使用)
@@ -24,9 +24,9 @@ python 跳转机菜单，搭配[双因子认证](https://billwang139967.gitbooks
 
 ## 版本发布
 
+* v1.0.3，2017-08-18，更新：将配置文件放到 ~/.hostlist.cfg ,不同的用户可以用不同的菜单界面
 * v1.0.2，2017-03-28，更新：添加 snack.py 文件，兼容 ubuntu 系统
 * v1.0.1，2016-08-31，新增：发布初始版本。
-
 
 ## 参加步骤
 

@@ -12,12 +12,24 @@ import os, sys
 root_path = os.path.split(os.path.realpath(__file__))[0]
 sys.path.insert(0, os.path.join(root_path, 'mylib'))
 from snack import *
-import time, sys, os
+import  sys, os
 import ConfigParser
-import sys, getopt
+import getopt
 
-version = '$Id: sshmenu.py 1.0.2 $'
+version = '$Id: sshmenu.py 1.0.3 $'
 
+_hostlistcfgfile = '%s/.hostlist.cfg'% os.environ['HOME']
+
+if not os.path.exists('%s'%_hostlistcfgfile):
+    #os.system(r'touch %s' %_hostlistcfgfile)
+    T=open(_hostlistcfgfile,'w+')
+    T.write("""[ceshi]
+description=ceshixxxxx
+hostname=127.0.0.1
+username=root
+hostport=22
+""")
+    T.close()
 def menuhostlist(screen, defaultitem = 0):
     global _hostlistcfgfile
     lbcw = []
@@ -56,7 +68,6 @@ def menuhostlist(screen, defaultitem = 0):
 
 def listhost():
     global _hostlistcfgfile
-    listitem = []
     Config = ConfigParser.ConfigParser()
     cfgfile = Config.read(_hostlistcfgfile)
     if cfgfile == []:
@@ -75,10 +86,9 @@ def listhost():
         sshuser = Config.get(item, 'username')
         sshport = Config.get(item, 'hostport')
         print "#ssh -p %s %s@%s"%(sshport,sshuser,sshhost)
-        print "#scp -P %s srcfile %s@%s:/root/"%(sshport,sshuser,sshhost)
+        print "#scp -P %s srcfile %s@%s:~/"%(sshport,sshuser,sshhost)
 
 
-_hostlistcfgfile = '%s/hostlist.cfg'%os.path.split(os.path.realpath(__file__))[0]
 
 if len(sys.argv) == 2:
     try:
@@ -93,5 +103,9 @@ if len(sys.argv) == 2:
             listhost()
 else:
     screen = SnackScreen()
-    menuhostlist(screen)
-    screen.finish()
+    try:
+        menuhostlist(screen)
+    except Exception,e: 
+        print("the config file have error")
+    finally:
+        screen.finish()
